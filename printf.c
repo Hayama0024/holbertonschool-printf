@@ -23,40 +23,40 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
-			i++;
+				i++;
 
-		if (format[i] == 'c')
-		{
-			char c = va_arg(args, int);
-			write(1, &c, 1);
-			count++;
-		}
-		else if (format[i] == 's')
-		{
-			str = va_arg(args, char *);
-			if (!str)
+			if (format[i] == 'c')
 			{
-				str = "(null)";
-			}
-				while(*str)
-				{
-				write(1, str++, 1);
+				char c = va_arg(args, int);
+				write(1, &c, 1);
 				count++;
+			}
+			else if (format[i] == 's')
+			{
+				str = va_arg(args, char *);
+				if (!str)
+				{
+					str = "(null)";
 				}
-			
-				
-		}
-		else if (format[i] == '%')
-		{
-			write(1, "%", 1);
-			count++;
-		}
-		else
-		{
-			write(1, "%", 1);
-			write(1, &format[i], 1);
-			count += 2;
-		}
+				while (*str)
+				{
+					write(1, str++, 1);
+					count++;
+				}
+
+
+			}
+			else if (format[i] == '%')
+			{
+				write(1, "%", 1);
+				count++;
+			}
+			else
+			{
+				write(1, "%", 1);
+				write(1, &format[i], 1);
+				count += 2;
+			}
 		}
 		else if (format[i] == '%' && format[i + 1] == '\0')
 		{
