@@ -51,6 +51,17 @@ int _printf(const char *format, ...)
 			write(1, "%", 1);
 			count++;
 		}
+		else
+		{
+			write(1, "%", 1);
+			write(1, &format[i], 1);
+			count += 2;
+		}
+		}
+		else if (format[i] == '%' && format[i + 1] == '\0')
+		{
+			va_end(args);
+			return (-1);
 		}
 		else
 		{
