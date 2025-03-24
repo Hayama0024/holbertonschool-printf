@@ -1,6 +1,8 @@
 #include "main.h"
 #include <stdarg.h>
 #include <stdio.h>
+#include <unistd.h>
+
 /**
  *
  *
@@ -9,21 +11,22 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int i = 0, int count = 0;
+	int i = 0, count = 0;
+	char *str;
 
 	va_start(args, format);
 
-	while (formt[i] !== '\0')
+	while (format[i] != '\0')
 	{
 		if (format[i] == 'c')
 		{
-			char c = var_arg(args, int);
+			char c = va_arg(args, int);
 			write(1, &c, 1);
 			count++;
 		}
 		else if (format[i] == 's')
 		{
-			str = va_arg(args char *);
+			str = va_arg(args, char *);
 			while(*str)
 			{
 				write(1, str, 1);
