@@ -10,7 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list args, args_copy;
+	va_list args,
 	int i = 0, count = 0;
 	char *str;
 
@@ -18,7 +18,6 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(args, format);
-	va_copy(args_copy, args);
 
 	while (format[i])
 	{
@@ -38,13 +37,13 @@ int _printf(const char *format, ...)
 			if (!str)
 			{
 				str = "(null)";
-
+			}
 				while(*str)
 				{
 				write(1, str++, 1);
 				count++;
 				}
-			}
+			
 				
 		}
 		else if (format[i] == '%')
@@ -61,6 +60,5 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
-	va_end(args_copy);
 	return (count);
 }
