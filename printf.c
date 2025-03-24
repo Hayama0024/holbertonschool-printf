@@ -14,9 +14,12 @@ int _printf(const char *format, ...)
 	int i = 0, count = 0;
 	char *str;
 
+	if (format == NULL)
+		return (-1);
+
 	va_start(args, format);
 
-	while (format[i] != '\0')
+	while (format[i])
 	{
 		if (format[i] == 'c')
 		{
@@ -27,10 +30,12 @@ int _printf(const char *format, ...)
 		else if (format[i] == 's')
 		{
 			str = va_arg(args, char *);
+			if (!str)
+			{
+				str = "(null)";
 			while(*str)
 			{
-				write(1, str, 1);
-				str++;
+				write(1, str++, 1);
 				count++;
 			}
 		}
