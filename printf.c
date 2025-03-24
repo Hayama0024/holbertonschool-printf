@@ -33,11 +33,14 @@ int _printf(const char *format, ...)
 			if (!str)
 			{
 				str = "(null)";
-			while(*str)
-			{
+
+				while(*str)
+				{
 				write(1, str++, 1);
 				count++;
+				}
 			}
+				
 		}
 		else if (format[i] == '%')
 		{
