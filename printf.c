@@ -10,7 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	va_list args;
+	va_list args, args_copy;
 	int i = 0, count = 0;
 	char *str;
 
@@ -18,6 +18,7 @@ int _printf(const char *format, ...)
 		return (-1);
 
 	va_start(args, format);
+	va_copy(args_copy, args);
 
 	while (format[i])
 	{
@@ -60,5 +61,6 @@ int _printf(const char *format, ...)
 		i++;
 	}
 	va_end(args);
+	va_end(args_copy);
 	return (count);
 }
