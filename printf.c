@@ -1,6 +1,5 @@
 #include "main.h"
 #include <stdarg.h>
-#include <stdio.h>
 #include <unistd.h>
 
 /**
@@ -12,7 +11,7 @@ int print_char(va_list args)
 {
 	char c = va_arg(args, int);
 	write(1, &c, 1);
-	return (count);
+	return (1);
 }
 
 /**
@@ -24,6 +23,8 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	char *str = va_arg(args, char*);
+	int count = 0;
+
 	if (str == NULL)
 	{
 		str = "(null)";
