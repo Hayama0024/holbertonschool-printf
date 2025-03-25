@@ -24,7 +24,7 @@ int print_char(va_list args)
 int print_string(va_list args)
 {
 	char *str = va_arg(args, char*);
-	if (!str)
+	if (str == NULL)
 	{
 		str = "(null)";
 	}
@@ -72,18 +72,8 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == 's')
 			{
-				str = va_arg(args, char *);
-				if (!str)
-				{
-					str = "(null)";
-				}
-				while (*str)
-				{
-					write(1, str++, 1);
-					count++;
-				}
-
-
+				print_str(args);
+				count++;
 			}
 			else if (format[i] == '%')
 			{
@@ -92,9 +82,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				write(1, "%", 1);
-				write(1, &format[i], 1);
-				count += 2;
+				print_unknown(format[i]);
 			}
 		}
 		else if (format[i] == '%' && format[i + 1] == '\0')
