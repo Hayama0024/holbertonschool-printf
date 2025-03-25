@@ -76,7 +76,7 @@ $ ./printf
 ```
 
 ## Flow chart :round_pushpin:
-![Flow chart ](https://github.com/user-attachments/assets/3b03c81c-3eb8-4c4a-b7a8-ce091144054e)
+![Image](https://github.com/user-attachments/assets/86196ae5-48ce-46b4-9344-51940f7a9f13)
 
 ## Authors :bookmark:
 [Ryota Higa](https://github.com/Hayama0024)<br>
