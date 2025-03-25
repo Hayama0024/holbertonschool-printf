@@ -76,8 +76,10 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 				count += print_string(args);
 			else if (format[i] == '%')
+			{
 				write(1, "%", 1);
 				count++;
+			}
 			else
 				count += print_unknown(format[i]);
 		}
