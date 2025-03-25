@@ -14,7 +14,7 @@ typedef struct print
 {
 	char *type;
 	void (*f)(va_list ap);
-}print_type;
+} print_type;
 
 
 /*prototype*/
