@@ -44,21 +44,25 @@ _printf supports the following format specifiers:
 
 int main(void)
 {
-    _printf("Character: %c\n", 'H');
+    _printf("Character: %c\n", 'A');
     _printf("String: %s\n", "Hello, World!");
     _printf("Percentage: %%\n");
     _printf("Integer: %d\n", 123);
     _printf("Integer: %i\n", 456);
+    _printf("Unknown specifier: %r\n");
+    _printf("Text: "Holberton school\n");
     return (0);
 }
 ```
-**result**
+**Result**
 ```
-H
+A
 Hello World
 %
 123
 456
+%r
+Holberton school
 ```
 ## Man page
 (commende d'execution de la man page)
@@ -71,7 +75,6 @@ $ ./printf
 ```
 
 ## Flow chart
-And this will produce a flow chart:
 ![Flow chart ](https://github.com/user-attachments/assets/3b03c81c-3eb8-4c4a-b7a8-ce091144054e)
 
 ## Authors
