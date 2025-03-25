@@ -1,13 +1,13 @@
 
 # _printf 
 
-## Description
+## Description :memo:
 This repository is the first group project (by Ryota Higa and Emi Hatano) for the Holberton school foundation class.
 This project creates a custom printf() function called _printf().<br>
  _printf() - Produce output to stdout according to a format described below similar to the printf() function.
 
 
-## Environment
+## Environment :computer:
 
 - **Language:** C
 - **Operating System:** Ubuntu 22.04
@@ -15,12 +15,12 @@ This project creates a custom printf() function called _printf().<br>
 - **gcc version:** 11.4.0
 -  **Style guideline:**  [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
-## Compilation
+## Compilation :left_right_arrow:
 To compile the project, use the following command:
 ```
 $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89
 ```
-## Usage
+## Usage  :bulb:
 The _printf function can be used similarly to the standard printf function:
 ```
 _printf(const char *format, ...)
@@ -38,7 +38,7 @@ _printf supports the following format specifiers:
 | %i        | prints integers                 |
 
 
-## Examples
+## Examples  :pencil2:
 ```
 #include "main.h"
 
@@ -64,19 +64,20 @@ Hello World
 %r
 Holberton school
 ```
-## Man page
-(commende d'execution de la man page)
-
-## Testing
+## Man page :book:
+```
+$ man _printf
+```
+## Testing :white_check_mark:
 To run tests, to check the overall functionality of the program, compile with `main.c` as the main file:
  ```
 $ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 $ ./printf
 ```
 
-## Flow chart
+## Flow chart :round_pushpin:
 ![Flow chart ](https://github.com/user-attachments/assets/3b03c81c-3eb8-4c4a-b7a8-ce091144054e)
 
-## Authors
+## Authors :bookmark:
 [Ryota Higa](https://github.com/Hayama0024)<br>
 [Emi Hatano](https://github.com/Emi-H106)
