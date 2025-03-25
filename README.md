@@ -75,5 +75,5 @@ And this will produce a flow chart:
 ![Flow chart ](https://github.com/user-attachments/assets/3b03c81c-3eb8-4c4a-b7a8-ce091144054e)
 
 ## Authors
-[Ryota Higa](https://github.com/Hayama0024)
+[Ryota Higa](https://github.com/Hayama0024)<br>
 [Emi Hatano](https://github.com/Emi-H106)
