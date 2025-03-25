@@ -3,7 +3,7 @@
 
 ## Description
 This repository is the first group project (by Ryota Higa and Emi Hatano) for the Holberton school foundation class.
-This project creates a custom printf() function called _printf().
+This project creates a custom printf() function called _printf().<br>
  _printf() - Produce output to stdout according to a format described below similar to the printf() function.
 
 
