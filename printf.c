@@ -70,7 +70,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%' && format[i + 1])
 		{
-				i++;
+			i++;
 			if (format[i] == 'c')
 				count += print_char(args);
 			else if (format[i] == 's')
