@@ -43,7 +43,7 @@ int print_string(va_list args)
  * Return: num of char printed
  */
 
-int print_unknown(char c);
+int print_unknown(char c)
 {
 	write(1, "%", 1);
 	write(1, &c, 1);
@@ -72,7 +72,7 @@ int _printf(const char *format, ...)
 			}
 			else if (format[i] == 's')
 			{
-				count += print_str(args);
+				count += print_string(args);
 			}
 			else if (format[i] == '%')
 			{
