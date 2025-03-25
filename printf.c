@@ -67,13 +67,11 @@ int _printf(const char *format, ...)
 
 			if (format[i] == 'c')
 			{
-				print_char(args);
-				count++;
+				count += print_char(args);
 			}
 			else if (format[i] == 's')
 			{
-				print_str(args);
-				count++;
+				count += print_str(args);
 			}
 			else if (format[i] == '%')
 			{
@@ -82,7 +80,7 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				print_unknown(format[i]);
+				count += print_unknown(format[i]);
 			}
 		}
 		else if (format[i] == '%' && format[i + 1] == '\0')
