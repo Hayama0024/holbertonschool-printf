@@ -3,12 +3,11 @@
 
 #include <stdarg.h>
 
-/*structure*/
-/*
-struct print - prints char,string,%
-@type: type de variable
-@f: the function associated
-*/
+/**
+ * struct print - prints char string, %
+ * @type: type de variable
+ * @f: the function associated
+ */
 
 typedef struct print
 {
