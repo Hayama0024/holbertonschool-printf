@@ -25,6 +25,7 @@ int print_int(va_list args)
 		write(1, "-", 1);
 		count++;
 
+		/*for case : INT_MIN*/
 		if (num == -2147483648)
 		{
 			write(1, "2147483648", 10);
@@ -39,15 +40,18 @@ int print_int(va_list args)
 		divisor *= 10;
 	}
 
+	/*print each digit*/
 	while (divisor > 0)
 	{
 		digit_value  = num / divisor;
 		c = '0' + digit_value;
 		write(1, &c, 1);
 		count++;
+
+		/*Preparation for calculating the next digit*/
 		num %= divisor;
 		divisor /= 10;
 	}
 
-	return count;
+	return (count);
 }
