@@ -18,7 +18,7 @@ This project creates a custom printf() function called _printf().<br>
 ## Compilation :left_right_arrow:
 To compile the project, use the following command:
 ```
-$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89
+$ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
 ```
 ## Usage  :bulb:
 The _printf function can be used similarly to the standard printf function:
@@ -40,29 +40,72 @@ _printf supports the following format specifiers:
 
 ## Examples  :pencil2:
 ```
+#include <limits.h>
+#include <stdio.h>
 #include "main.h"
 
 int main(void)
 {
-    _printf("Character: %c\n", 'A');
-    _printf("String: %s\n", "Hello, World!");
-    _printf("Percentage: %%\n");
-    _printf("Integer: %d\n", 123);
-    _printf("Integer: %i\n", 456);
-    _printf("Unknown specifier: %r\n");
-    _printf("Text: "Holberton school\n");
+    int len;
+    int len2;
+    unsigned int ui;
+    void *addr;
+
+    len = _printf("Let's try to printf a simple sentence.\n");
+    len2 = printf("Let's try to printf a simple sentence.\n");
+    ui = (unsigned int)INT_MAX + 1024;
+    addr = (void *)0x7ffe637541f0;
+    _printf("Length:[%d, %i]\n", len, len);
+    printf("Length:[%d, %i]\n", len2, len2);
+    _printf("Negative:[%d]\n", -762534);
+    printf("Negative:[%d]\n", -762534);
+    _printf("Unsigned:[%u]\n", ui);
+    printf("Unsigned:[%u]\n", ui);
+    _printf("Unsigned octal:[%o]\n", ui);
+    printf("Unsigned octal:[%o]\n", ui);
+    _printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);
+    _printf("Character:[%c]\n", 'H');
+    printf("Character:[%c]\n", 'H');
+    _printf("String:[%s]\n", "I am a string !");
+    printf("String:[%s]\n", "I am a string !");
+    _printf("Address:[%p]\n", addr);
+    printf("Address:[%p]\n", addr);
+    len = _printf("Percent:[%%]\n");
+    len2 = printf("Percent:[%%]\n");
+    _printf("Len:[%d]\n", len);
+    printf("Len:[%d]\n", len2);
+    _printf("Unknown:[%r]\n");
+    printf("Unknown:[%r]\n");
     return (0);
 }
 ```
 **Result**
 ```
-A
-Hello World
-%
-123
-456
-%r
-Holberton school
+Let's try to printf a simple sentence.
+Let's try to printf a simple sentence.
+Length:[00, 00]
+Length:[39, 39]
+Negative:[-000000]
+Negative:[-762534]
+Unsigned:[%u]
+Unsigned:[2147484671]
+Unsigned octal:[%o]
+Unsigned octal:[20000001777]
+Unsigned hexadecimal:[%x, %X]
+Unsigned hexadecimal:[800003ff, 800003FF]
+Character:[H]
+Character:[H]
+String:[I am a string !]
+String:[I am a string !]
+Address:[%p]
+Address:[0x7ffe637541f0]
+Percent:[%]
+Percent:[%]
+Len:[00]
+Len:[12]
+Unknown:[%r]
+Unknown:[%r]
 ```
 ## Man page :book:
 ```
