@@ -13,7 +13,7 @@ int print_int(va_list args)
 {
 	int num = va_arg(args, int);
 	int count = 0;
-	unsigned temp = num;
+	unsigned int temp = num;
 	int divisor = 1;
 	int digit_value;
 	char c;
