@@ -29,8 +29,9 @@ int print_int(va_list args)
 	}
 
 	/*Calculate the number of digits*/
-	while (temp /= 10)
+	while (temp > 0)
 	{
+		temp /= 10;
 		digits++;
 	}
 
