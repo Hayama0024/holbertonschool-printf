@@ -62,7 +62,7 @@ int _printf(const char *format, ...)
 	int i = 0, count = 0;
 
 	if (format == NULL)
-	return (-1);
+		return (-1);
 
 	va_start(args, format);
 
@@ -76,7 +76,7 @@ int _printf(const char *format, ...)
 			else if (format[i] == 's')
 				count += print_string(args);
 			else if (format[i] == 'd' || format[i] == 'i')
-			       	count += print_int(args);
+				count += print_int(args);
 			else if (format[i] == '%')
 			{
 				write(1, "%", 1);
