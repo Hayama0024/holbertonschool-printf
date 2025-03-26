@@ -115,7 +115,7 @@ $ man _printf
 To run tests, to check the overall functionality of the program, compile with `main.c` as the main file:
  ```
 $ gcc -Wall -Wextra -Werror -pedantic -std=gnu89 -Wno-format *.c
-$ ./printf
+$ ./a.out
 ```
 
 ## Flow chart :round_pushpin:
