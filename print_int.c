@@ -35,11 +35,11 @@ int print_int(va_list args)
 
 	while (divisor > 0)
 	{
-		digit_value  = temps / divisor;
+		digit_value  = temp / divisor;
 		c = '0' + digit_value;
 		write(1, &c, 1);
 		count++;
-		temps %= divisor;
+		temp %= divisor;
 		divisor /= 10;
 	}
 
