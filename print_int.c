@@ -14,9 +14,8 @@ int print_int(va_list args)
 	int num = va_arg(args, int);
 	int count = 0;
 	int temp = num;
-	int digits = 1;
 	int divisor = 1;
-	int i, digit_value;
+	int digit_value;
 	char c;
 
 
@@ -28,25 +27,20 @@ int print_int(va_list args)
 		num = -num;
 	}
 
-	/*Calculate the number of digits*/
-	while (temp > 0)
+	/*Calculate the divisor for the most singnificant digit*/
+	while (temp /= 10)
 	{
-		temp /= 10;
-		digits++;
+		divisor *= 10;
 	}
 
-	while (digits--)
+	while (divisor > 0)
 	{
-		for (i = 0; i < digits; i++)
-		{
-			divisor *= 10;
-		}
-
-		digit_value = num / divisor;
+		digit_value  = num / divisor;
 		c = '0' + digit_value;
 		write(1, &c, 1);
 		count++;
-		num -= digit_value * divisor;
+		num %= divisor;
+		divisor /= 10;
 	}
 
 	return count;
