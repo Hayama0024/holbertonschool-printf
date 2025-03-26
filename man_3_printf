@@ -52,4 +52,11 @@ SH. AUTHORS
 Hayama0024 & Emi-H106
 
 .SH NOTE
+This function does not fully replicate the standard C library printf function.
+THe following features are not supported:
+
+- Flags (e.g. +,-,#)
+- Field width (e.g.%10d)
+- Precision (e.g. %.2f)
+- length modifiers (e.g. %ld, %hd)
 
