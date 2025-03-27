@@ -114,7 +114,7 @@ Unknown:[%r]
 ```
 ## Man page :book:
 ```
-$ man _printf
+$ cat man_3_printf
 ```
 ## Testing :white_check_mark:
 To run tests, to check the overall functionality of the program, compile with `main.c` as the main file:
