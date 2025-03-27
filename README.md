@@ -15,6 +15,11 @@ This project creates a custom printf() function called _printf().<br>
 - **gcc version:** 11.4.0
 -  **Style guideline:**  [Betty style](https://github.com/holbertonschool/Betty/wiki)
 
+## Install :arrow_down:
+```
+$ git clone https://github.com/Hayama0024/holbertonschool-printf.git
+```
+
 ## Compilation :left_right_arrow:
 To compile the project, use the following command:
 ```
